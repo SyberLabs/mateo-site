@@ -111,7 +111,18 @@ body {
 @keyframes lamp-on { from { --glow: 0; } to { --glow: 1; } }
 
 .site-header { display: flex; justify-content: flex-end; padding-block: 10px; }
-.site-header a { display: inline-block; padding: 10px 0; font-weight: 700; font-size: .9375rem; }
+.site-header a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--lamp);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .9375rem;
+  text-decoration: none;
+}
+.site-header a:hover { background: rgba(255, 181, 71, .12); color: var(--moon); }
 
 .hero { display: grid; gap: 24px; padding-block: 4px 56px; }
 .name { font-size: clamp(4rem, 20vw, 9.5rem); line-height: .9; letter-spacing: -.015em; }
@@ -119,8 +130,11 @@ body {
 .facts { display: grid; gap: 18px; }
 .degree { font-weight: 700; }
 .roles-label { color: var(--haze); font-size: .9375rem; }
-.roles ul { list-style: none; padding: 0; display: grid; margin-top: 2px; line-height: 1.5; }
+.roles ul { list-style: none; padding: 0; display: grid; gap: 6px; margin-top: 4px; line-height: 1.45; }
+.roles li a { margin-left: .45em; font-size: .9375rem; font-weight: 700; white-space: nowrap; }
+.status { display: grid; gap: 2px; }
 .availability { color: var(--lamp); font-weight: 700; font-size: 1.125rem; }
+.location { color: var(--haze); }
 
 .media { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 12px; }
 .photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; }
@@ -138,21 +152,6 @@ body {
   line-height: 1.35;
   text-align: center;
 }
-.play {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--haze);
-  border-radius: 50%;
-}
-.play::before {
-  content: "";
-  margin-left: 3px;
-  border-left: 12px solid var(--haze);
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-}
 /* Once a real video replaces the slot (see README), it sits under a smaller photo on phones. */
 .intro-video video { display: block; width: 100%; height: auto; border-radius: 2px; background: var(--dusk-raised); }
 .media:has(.intro-video video) { grid-template-columns: minmax(0, 1fr); }
@@ -167,13 +166,15 @@ body {
 .project + .project { border-top: 1px solid var(--rule); margin-top: 32px; }
 .project h3 { font-size: clamp(2rem, 8vw, 2.75rem); }
 .context { color: var(--haze); margin-top: 8px; max-width: 30rem; }
-.credits { display: grid; gap: 16px; }
+.credits { display: grid; gap: 16px; align-content: start; }
 .credits div { display: grid; gap: 2px; }
 .credits dt { color: var(--haze); font-size: .9375rem; font-weight: 700; }
 .credits dt.mine { color: var(--lamp); }
 .credits dd { max-width: 40rem; }
-.project-link { font-weight: 700; }
+.project-link { font-weight: 700; margin-top: 10px; }
 .project-link a { display: inline-block; padding-block: 6px; }
+.still { margin-top: 18px; }
+.still img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 2px; background: #000; }
 
 .statement {
   font-family: var(--serif);
@@ -182,6 +183,7 @@ body {
   max-width: 30ch;
   margin-top: 24px;
 }
+.plain { margin-top: 14px; max-width: 40rem; }
 .steps { list-style: none; padding: 0; display: grid; gap: 28px; margin-top: 44px; counter-reset: step; }
 .steps li { counter-increment: step; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); column-gap: 10px; align-content: start; }
 .steps li::before {
@@ -217,7 +219,6 @@ body {
 .contact-grid li a { display: inline-block; padding-block: 5px; }
 .contact-grid li a .meta { white-space: nowrap; }
 .meta { color: var(--haze); font-size: .9375rem; }
-.location { margin-top: 16px; color: var(--haze); }
 
 .site-footer { padding-block: 28px 44px; border-top: 1px solid var(--rule); color: var(--haze); font-size: .9375rem; }
 
@@ -237,14 +238,12 @@ body {
   .facts { grid-column: 1; grid-row: 3; }
   .media { grid-column: 2; grid-row: 2 / -1; grid-template-columns: minmax(0, 1fr); align-self: start; }
   .video-slot { min-height: 120px; }
-  .roles ul { grid-template-columns: repeat(2, minmax(0, max-content)); column-gap: 40px; }
   .section { padding-block: 96px; }
-  .project { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); grid-template-rows: auto 1fr; column-gap: 72px; padding-block: 56px 8px; }
+  .project { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: 72px; padding-block: 56px 8px; }
   .project + .project { margin-top: 48px; }
-  .project-head { grid-column: 1; }
-  .credits { grid-column: 2; grid-row: 1 / span 2; gap: 18px; }
+  .project-head { grid-column: 1; align-self: start; }
+  .credits { grid-column: 2; grid-row: 1; gap: 18px; }
   .credits div { grid-template-columns: 12rem minmax(0, 1fr); column-gap: 28px; }
-  .project-link { grid-column: 1; align-self: start; }
   .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 48px; }
   .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 72px; }
 }
@@ -276,15 +275,15 @@ body {
         <div class="roles">
           <p class="roles-label" id="roles-label">Open to roles in</p>
           <ul aria-labelledby="roles-label">
-            <li>Technical support</li>
-            <li>Implementation and onboarding</li>
-            <li>Solutions and developer relations</li>
-            <li>Creative technology</li>
-            <li>QA</li>
-            <li>AI automation</li>
+            <li>Technical support, implementation, onboarding and&nbsp;QA <a href="resumes/mateo-robles-resume-support-implementation-qa.pdf" aria-label="Résumé for technical support, implementation, onboarding and QA (PDF)">Résumé</a></li>
+            <li>Solutions, developer relations and creative&nbsp;technology <a href="resumes/mateo-robles-resume-solutions-devrel-creative.pdf" aria-label="Résumé for solutions, developer relations and creative technology (PDF)">Résumé</a></li>
+            <li>AI automation <a href="resumes/mateo-robles-resume-ai-automation.pdf" aria-label="Résumé for AI automation (PDF)">Résumé</a></li>
           </ul>
         </div>
-        <p class="availability">Looking for work now.</p>
+        <div class="status">
+          <p class="availability">Looking for work now.</p>
+          <p class="location">Based in the San Francisco Bay Area.</p>
+        </div>
       </div>
       <div class="media">
         <figure class="photo">
@@ -292,7 +291,6 @@ body {
         </figure>
         <!-- Intro video slot. When media/intro.mp4 exists, replace this div with the <video> block in README.md. -->
         <div class="video-slot" id="intro-video">
-          <span class="play" aria-hidden="true"></span>
           <p>Intro video coming soon</p>
         </div>
       </div>
@@ -300,12 +298,13 @@ body {
 
 <section class="section wrap" id="projects" aria-labelledby="projects-title">
   <h2 class="section-title" id="projects-title">Projects</h2>
-  <p class="section-lede">Each one says who did what: me, the AI agents, and my collaborator Seth Carlson.</p>
+  <p class="section-lede">AI coding agents write the code in my projects, so each one says who did what: me, the agents, and Seth Carlson, my co-founder.</p>
 
   <article class="project" aria-labelledby="porchlight">
     <div class="project-head">
       <h3 id="porchlight">PorchLight</h3>
-      <p class="context">Cline, Parallel &amp; Composio Hackathon, San Francisco, October 19, 2026</p>
+      <p class="context">Third place at the Cline, Parallel &amp; Composio Hackathon, San Francisco, October 19, 2026</p>
+      <p class="project-link"><a href="https://github.com/sykosyber/porchlight">See PorchLight on GitHub</a></p>
     </div>
     <dl class="credits">
       <div>
@@ -314,28 +313,28 @@ body {
       </div>
       <div>
         <dt class="mine">What I did</dt>
-        <dd>I directed three AI coding agents to build it at the one-day hackathon: Cline, Cursor and Claude Code.</dd>
+        <dd>At the one-day hackathon, I directed three AI coding agents to build it: Cline, Cursor and Claude Code.</dd>
       </div>
       <div>
         <dt>What agents and Seth did</dt>
-        <dd>The agents built all of it. Cline wrote the pin-and-route pipeline, Cursor set up the repo, and Claude Code wrote most of the other changes. Seth built nothing in this repo.</dd>
+        <dd>The agents built all of it. Cline wrote the core that finds the right agency for a pin, Cursor set up the project, and Claude Code made most of the other changes. Seth built none of it.</dd>
       </div>
       <div>
         <dt>How it was checked</dt>
-        <dd>Automated smoke tests, a live Composio run, and demo pins checked against SF.gov sources.</dd>
+        <dd>Automated tests of the main steps, a live run on Composio's real service, and demo pins checked against SF.gov sources.</dd>
       </div>
       <div>
         <dt>Result</dt>
         <dd>Third place at the hackathon. The code is public.</dd>
       </div>
     </dl>
-    <p class="project-link"><a href="https://github.com/sykosyber/porchlight">See PorchLight on GitHub</a></p>
   </article>
 
   <article class="project" aria-labelledby="rise">
     <div class="project-head">
       <h3 id="rise">RISE</h3>
       <p class="context">A reading app in open beta that I work on with Seth Carlson</p>
+      <p class="project-link"><a href="https://rise.syberlabs.io/">Try RISE in your browser</a></p>
     </div>
     <dl class="credits">
       <div>
@@ -344,7 +343,7 @@ body {
       </div>
       <div>
         <dt class="mine">What I did</dt>
-        <dd>I owned its Composer feature, which lets ChatGPT write a reading that RISE plays. I made the product calls, directed the AI agents that built it, and tested it by hand. In a live ChatGPT session I reported what worked and what didn't, for example that the model couldn't see an on-screen marker.</dd>
+        <dd>I owned its Composer feature, which lets ChatGPT write a reading for RISE to play. I made the product calls, directed the AI agents that built it, and tested it by hand. In a live ChatGPT session I reported what worked and what didn't, for example that the model couldn't see an on-screen marker.</dd>
       </div>
       <div>
         <dt>What agents and Seth did</dt>
@@ -352,25 +351,28 @@ body {
       </div>
       <div>
         <dt>How it was checked</dt>
-        <dd>Unit tests and browser tests, including real video encoding, run in its GitHub workflows.</dd>
+        <dd>Automated tests, including browser tests and real video encoding, run in its GitHub workflows.</dd>
       </div>
       <div>
         <dt>Result</dt>
         <dd>Live in open beta. No usage numbers yet.</dd>
       </div>
     </dl>
-    <p class="project-link"><a href="https://rise.syberlabs.io/">Try RISE in your browser</a></p>
   </article>
 
   <article class="project" aria-labelledby="engines">
     <div class="project-head">
       <h3 id="engines">Engines</h3>
       <p class="context">Seven browser artworks I made with Claude</p>
+      <p class="project-link"><a href="https://sykosyber.github.io/engines/">See Engines</a></p>
+      <figure class="still">
+        <img src="img/gyre.webp" width="720" height="480" loading="lazy" decoding="async" alt="A still of Gyre running in a browser: glowing trails of light drawn from math equations.">
+      </figure>
     </div>
     <dl class="credits">
       <div>
         <dt>Problem</dt>
-        <dd>No problem to solve. It's art: seven pieces drawn from math, live in the browser.</dd>
+        <dd>It's an art project: seven pieces drawn from math, live in the browser.</dd>
       </div>
       <div>
         <dt class="mine">What I did</dt>
@@ -378,24 +380,24 @@ body {
       </div>
       <div>
         <dt>What agents and Seth did</dt>
-        <dd>Claude collaborated on all seven, and one piece is Claude's self-portrait. The code arrived in one commit, so git can't show who wrote which part. Seth built nothing in this repo.</dd>
+        <dd>Claude collaborated on all seven pieces, and one is Claude's self-portrait. Seth built none of it.</dd>
       </div>
       <div>
         <dt>How it was checked</dt>
-        <dd>No tests or CI.</dd>
+        <dd>No automated tests.</dd>
       </div>
       <div>
         <dt>Result</dt>
-        <dd>Published and live. Gyre runs in any browser. No usage data.</dd>
+        <dd>Published online. Gyre runs in any browser.</dd>
       </div>
     </dl>
-    <p class="project-link"><a href="https://sykosyber.github.io/engines/">See Engines</a></p>
   </article>
 </section>
 
 <section class="section wrap" id="how" aria-labelledby="how-title">
   <h2 class="section-title" id="how-title">How I work with AI</h2>
-  <p class="statement">I don't write code by hand. AI coding agents write it, and I decide what they build, direct them, and check their work.</p>
+  <p class="statement">I decide what gets built, direct the AI agents that build it, and check their work.</p>
+  <p class="plain">I don't write code by hand; the agents do. Each project above names which ones.</p>
   <ol class="steps">
     <li>
       <h3>Specify</h3>
@@ -407,7 +409,7 @@ body {
     </li>
     <li>
       <h3>Check</h3>
-      <p>I don't take an agent's word that the tests pass. A change merges only after our own automated checks run and pass.</p>
+      <p>I don't take an agent's word that the tests pass. In the agent system my team uses, a change is accepted only if our own automated checks pass.</p>
     </li>
   </ol>
 </section>
@@ -419,14 +421,13 @@ body {
     <button class="copy" type="button" data-copy="hello.mateorobles@gmail.com" hidden>Copy address</button>
     <span class="copy-status" role="status"></span>
   </div>
-  <p class="location">Based in the San Francisco Bay Area.</p>
   <div class="contact-grid">
-    <div>
+    <div id="resumes">
       <h3>Résumés</h3>
       <ul>
-        <li><a href="resumes/mateo-robles-resume-support-implementation-qa.pdf">Technical support, implementation and QA <span class="meta">(PDF)</span></a></li>
-        <li><a href="resumes/mateo-robles-resume-solutions-devrel-creative.pdf">Solutions, developer relations and creative technology <span class="meta">(PDF)</span></a></li>
-        <li><a href="resumes/mateo-robles-resume-ai-automation.pdf">AI automation and operations <span class="meta">(PDF)</span></a></li>
+        <li><a href="resumes/mateo-robles-resume-support-implementation-qa.pdf">Technical support, implementation and&nbsp;QA&nbsp;<span class="meta">(PDF)</span></a></li>
+        <li><a href="resumes/mateo-robles-resume-solutions-devrel-creative.pdf">Solutions, developer relations and creative&nbsp;technology&nbsp;<span class="meta">(PDF)</span></a></li>
+        <li><a href="resumes/mateo-robles-resume-ai-automation.pdf">AI automation and&nbsp;operations&nbsp;<span class="meta">(PDF)</span></a></li>
       </ul>
     </div>
     <div>
@@ -441,7 +442,7 @@ body {
 </main>
 
 <footer class="site-footer wrap">
-  <p>Site by SyberLabs.</p>
+  <p>Site by SyberLabs, the studio I co-founded with Seth Carlson.</p>
 </footer>
 
 <script>
