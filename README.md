@@ -67,7 +67,7 @@ but keep it short; `preload="none"` keeps it off the first load.
 
 ## Deploying
 
-GitHub Pages, from the `main` branch root. `.nojekyll` tells Pages to serve the files as they are.
+GitHub Pages, from the `main` branch root, live at https://syberlabs.space/mateo-site/ (the SyberLabs organization's Pages site uses the custom domain `syberlabs.space`, so project sites are served under it). `.nojekyll` tells Pages to serve the files as they are.
 
 ## Design
 
