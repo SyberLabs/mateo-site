@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mateo Robles</title>
+<meta name="description" content="Mateo Robles, Santa Clara CS 2026. Directs AI coding agents to build and test software. PorchLight placed third at a hackathon. Looking for work now.">
+<link rel="canonical" href="https://syberlabs.github.io/mateo-site/">
+<meta name="theme-color" content="#131d33">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mateo Robles">
+<meta property="og:description" content="Mateo Robles, Santa Clara CS 2026. Directs AI coding agents to build and test software. PorchLight placed third at a hackathon. Looking for work now.">
+<meta property="og:url" content="https://syberlabs.github.io/mateo-site/">
+<meta property="og:image" content="https://syberlabs.github.io/mateo-site/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mateo Robles">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23131d33'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23ffb547'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mateo Robles",
+  "url": "https://syberlabs.github.io/mateo-site/",
+  "image": "https://syberlabs.github.io/mateo-site/img/mateo-robles-640.webp",
+  "email": "mailto:hello.mateorobles@gmail.com",
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Santa Clara University" },
+  "homeLocation": { "@type": "Place", "name": "San Francisco Bay Area" },
+  "knowsAbout": ["Claude Code", "AI coding agents"],
+  "sameAs": ["https://www.linkedin.com/in/automateon/", "https://github.com/sykosyber"]
+}
+</script>
+<style>
+@font-face {
+  font-family: "Young Serif";
+  src: url(fonts/young-serif-latin.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url(fonts/atkinson-hyperlegible-next-latin.woff2) format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Dusk, moonlight and one lamp. The lamp colour marks light and Mateo's own part of each project. */
+:root {
+  --dusk: #131d33;
+  --dusk-raised: #1b2742;
+  --rule: #2c3a5a;
+  --moon: #eef1f7;
+  --haze: #a6b1c9;
+  --lamp: #ffb547;
+  --serif: "Young Serif", Georgia, "Times New Roman", serif;
+  --sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gutter: 20px;
+  --max: 1160px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--dusk);
+  color: var(--moon);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; margin: 0; }
+p, ul, ol, dl, dd, figure { margin: 0; }
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--lamp);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+}
+a:hover { color: var(--lamp); }
+:focus-visible { outline: 2px solid var(--lamp); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--max) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* The porch light: one warm source above the name, switched on once.
+   Painted as the page background, so it can never cause sideways scrolling. */
+@property --glow { syntax: "<number>"; inherits: false; initial-value: 1; }
+body {
+  background-image: radial-gradient(circle 560px at 120px 70px,
+    rgba(255, 206, 133, calc(.34 * var(--glow))),
+    rgba(255, 181, 71, calc(.13 * var(--glow))) 40%,
+    rgba(255, 181, 71, calc(.04 * var(--glow))) 70%,
+    rgba(255, 181, 71, 0) 100%);
+  background-repeat: no-repeat;
+  animation: lamp-on 1.6s ease-out both;
+}
+@keyframes lamp-on { from { --glow: 0; } to { --glow: 1; } }
+
+.site-header { display: flex; justify-content: flex-end; padding-block: 10px; }
+.site-header a { display: inline-block; padding: 10px 0; font-weight: 700; font-size: .9375rem; }
+
+.hero { display: grid; gap: 24px; padding-block: 4px 56px; }
+.name { font-size: clamp(4rem, 20vw, 9.5rem); line-height: .9; letter-spacing: -.015em; }
+.lede { font-size: clamp(1.25rem, 5vw, 1.625rem); line-height: 1.38; max-width: 28ch; }
+.facts { display: grid; gap: 18px; }
+.degree { font-weight: 700; }
+.roles-label { color: var(--haze); font-size: .9375rem; }
+.roles ul { list-style: none; padding: 0; display: grid; margin-top: 2px; line-height: 1.5; }
+.availability { color: var(--lamp); font-weight: 700; font-size: 1.125rem; }
+
+.media { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 12px; }
+.photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; }
+.video-slot {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 16px;
+  border: 1px dashed #4a5a80;
+  border-radius: 2px;
+  background: var(--dusk-raised);
+  color: var(--haze);
+  font-size: .9375rem;
+  line-height: 1.35;
+  text-align: center;
+}
+.play {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--haze);
+  border-radius: 50%;
+}
+.play::before {
+  content: "";
+  margin-left: 3px;
+  border-left: 12px solid var(--haze);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+/* Once a real video replaces the slot (see README), it sits under a smaller photo on phones. */
+.intro-video video { display: block; width: 100%; height: auto; border-radius: 2px; background: var(--dusk-raised); }
+.media:has(.intro-video video) { grid-template-columns: minmax(0, 1fr); }
+.media:has(.intro-video video) .photo { max-width: 240px; }
+
+.section { padding-block: 60px; border-top: 1px solid var(--rule); }
+.section-title { font-size: clamp(2.125rem, 8vw, 3.25rem); }
+.section-lede { color: var(--haze); margin-top: 12px; max-width: 40rem; }
+
+/* Projects read like credits: who did what, and how it was checked. */
+.project { display: grid; gap: 18px; padding-block: 40px 8px; }
+.project + .project { border-top: 1px solid var(--rule); margin-top: 32px; }
+.project h3 { font-size: clamp(2rem, 8vw, 2.75rem); }
+.context { color: var(--haze); margin-top: 8px; max-width: 30rem; }
+.credits { display: grid; gap: 16px; }
+.credits div { display: grid; gap: 2px; }
+.credits dt { color: var(--haze); font-size: .9375rem; font-weight: 700; }
+.credits dt.mine { color: var(--lamp); }
+.credits dd { max-width: 40rem; }
+.project-link { font-weight: 700; }
+.project-link a { display: inline-block; padding-block: 6px; }
+
+.statement {
+  font-family: var(--serif);
+  font-size: clamp(1.375rem, 5.4vw, 2.125rem);
+  line-height: 1.25;
+  max-width: 30ch;
+  margin-top: 24px;
+}
+.steps { list-style: none; padding: 0; display: grid; gap: 28px; margin-top: 44px; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); column-gap: 10px; align-content: start; }
+.steps li::before {
+  content: counter(step);
+  grid-row: 1 / span 2;
+  color: var(--lamp);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+.steps h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.steps p { max-width: 34rem; }
+
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 26px; }
+.email { font-size: clamp(1.25rem, 5.6vw, 2rem); font-weight: 700; overflow-wrap: anywhere; line-height: 1.3; }
+.copy {
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--lamp);
+  color: var(--dusk);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.copy:hover { background: #ffc875; }
+.copy-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.contact-grid { display: grid; gap: 36px; margin-top: 44px; }
+.contact-grid h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.contact-grid ul { list-style: none; padding: 0; display: grid; gap: 6px; }
+.contact-grid li a { display: inline-block; padding-block: 5px; }
+.contact-grid li a .meta { white-space: nowrap; }
+.meta { color: var(--haze); font-size: .9375rem; }
+.location { margin-top: 16px; color: var(--haze); }
+
+.site-footer { padding-block: 28px 44px; border-top: 1px solid var(--rule); color: var(--haze); font-size: .9375rem; }
+
+@media (min-width: 900px) {
+  :root { --gutter: 48px; }
+  body { font-size: 1.125rem; }
+  .site-header { padding-block: 18px; }
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: 72px;
+    row-gap: 30px;
+    padding-block: 12px 96px;
+  }
+  .name { grid-column: 1 / -1; }
+  .lede { grid-column: 1; grid-row: 2; }
+  .facts { grid-column: 1; grid-row: 3; }
+  .media { grid-column: 2; grid-row: 2 / -1; grid-template-columns: minmax(0, 1fr); align-self: start; }
+  .video-slot { min-height: 120px; }
+  .roles ul { grid-template-columns: repeat(2, minmax(0, max-content)); column-gap: 40px; }
+  .section { padding-block: 96px; }
+  .project { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); grid-template-rows: auto 1fr; column-gap: 72px; padding-block: 56px 8px; }
+  .project + .project { margin-top: 48px; }
+  .project-head { grid-column: 1; }
+  .credits { grid-column: 2; grid-row: 1 / span 2; gap: 18px; }
+  .credits div { grid-template-columns: 12rem minmax(0, 1fr); column-gap: 28px; }
+  .project-link { grid-column: 1; align-self: start; }
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 48px; }
+  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
+
+@media print {
+  body { background: #fff; color: #000; }
+  body { background-image: none; }
+  .site-header, .copy, .video-slot { display: none; }
+  a { color: #000; }
+  .availability, .credits dt.mine, .steps li::before { color: #000; }
+}
+</style>
+</head>
+<body>
+<header class="site-header wrap">
+  <a href="#contact">Contact</a>
+</header>
+
+<main id="main">
+    <section class="hero wrap" aria-labelledby="name">
+      <h1 class="name" id="name">Mateo Robles</h1>
+      <p class="lede">I direct AI coding agents, design products, and explain technical work in plain English.</p>
+      <div class="facts">
+        <p class="degree">B.S. Computer Science, Santa Clara University, 2026</p>
+        <div class="roles">
+          <p class="roles-label" id="roles-label">Open to roles in</p>
+          <ul aria-labelledby="roles-label">
+            <li>Technical support</li>
+            <li>Implementation and onboarding</li>
+            <li>Solutions and developer relations</li>
+            <li>Creative technology</li>
+            <li>QA</li>
+            <li>AI automation</li>
+          </ul>
+        </div>
+        <p class="availability">Looking for work now.</p>
+      </div>
+      <div class="media">
+        <figure class="photo">
+          <img src="img/mateo-robles-480.webp" srcset="img/mateo-robles-320.webp 320w, img/mateo-robles-480.webp 480w, img/mateo-robles-640.webp 640w" sizes="(min-width: 900px) 400px, 45vw" width="480" height="480" alt="Mateo Robles" fetchpriority="high">
+        </figure>
+        <!-- Intro video slot. When media/intro.mp4 exists, replace this div with the <video> block in README.md. -->
+        <div class="video-slot" id="intro-video">
+          <span class="play" aria-hidden="true"></span>
+          <p>Intro video coming soon</p>
+        </div>
+      </div>
+    </section>
+
+<section class="section wrap" id="projects" aria-labelledby="projects-title">
+  <h2 class="section-title" id="projects-title">Projects</h2>
+  <p class="section-lede">Each one says who did what: me, the AI agents, and my collaborator Seth Carlson.</p>
+
+  <article class="project" aria-labelledby="porchlight">
+    <div class="project-head">
+      <h3 id="porchlight">PorchLight</h3>
+      <p class="context">Cline, Parallel &amp; Composio Hackathon, San Francisco, October 19, 2026</p>
+    </div>
+    <dl class="credits">
+      <div>
+        <dt>Problem</dt>
+        <dd>People see a neighborhood problem, like a broken streetlight or a pothole, and don't know which city agency fixes it. You drop a pin, and PorchLight finds which San Francisco agency fixes it, with a link to the source.</dd>
+      </div>
+      <div>
+        <dt class="mine">What I did</dt>
+        <dd>I directed three AI coding agents to build it at the one-day hackathon: Cline, Cursor and Claude Code.</dd>
+      </div>
+      <div>
+        <dt>What agents and Seth did</dt>
+        <dd>The agents built all of it. Cline wrote the pin-and-route pipeline, Cursor set up the repo, and Claude Code wrote most of the other changes. Seth built nothing in this repo.</dd>
+      </div>
+      <div>
+        <dt>How it was checked</dt>
+        <dd>Automated smoke tests, a live Composio run, and demo pins checked against SF.gov sources.</dd>
+      </div>
+      <div>
+        <dt>Result</dt>
+        <dd>Third place at the hackathon. The code is public.</dd>
+      </div>
+    </dl>
+    <p class="project-link"><a href="https://github.com/sykosyber/porchlight">See PorchLight on GitHub</a></p>
+  </article>
+
+  <article class="project" aria-labelledby="rise">
+    <div class="project-head">
+      <h3 id="rise">RISE</h3>
+      <p class="context">A reading app in open beta that I work on with Seth Carlson</p>
+    </div>
+    <dl class="credits">
+      <div>
+        <dt>Problem</dt>
+        <dd>Let a book be read as a timed stream, with images, sound and moving visuals, not only as a typeset page.</dd>
+      </div>
+      <div>
+        <dt class="mine">What I did</dt>
+        <dd>I owned its Composer feature, which lets ChatGPT write a reading that RISE plays. I made the product calls, directed the AI agents that built it, and tested it by hand. In a live ChatGPT session I reported what worked and what didn't, for example that the model couldn't see an on-screen marker.</dd>
+      </div>
+      <div>
+        <dt>What agents and Seth did</dt>
+        <dd>AI agents, mostly Claude, wrote most of the code. Seth Carlson built the engineering infrastructure and, with agents, large parts of the core and interface.</dd>
+      </div>
+      <div>
+        <dt>How it was checked</dt>
+        <dd>Unit tests and browser tests, including real video encoding, run in its GitHub workflows.</dd>
+      </div>
+      <div>
+        <dt>Result</dt>
+        <dd>Live in open beta. No usage numbers yet.</dd>
+      </div>
+    </dl>
+    <p class="project-link"><a href="https://rise.syberlabs.io/">Try RISE in your browser</a></p>
+  </article>
+
+  <article class="project" aria-labelledby="engines">
+    <div class="project-head">
+      <h3 id="engines">Engines</h3>
+      <p class="context">Seven browser artworks I made with Claude</p>
+    </div>
+    <dl class="credits">
+      <div>
+        <dt>Problem</dt>
+        <dd>No problem to solve. It's art: seven pieces drawn from math, live in the browser.</dd>
+      </div>
+      <div>
+        <dt class="mine">What I did</dt>
+        <dd>I made the pieces with Claude. Gyre, for example, draws moving 3D trails of light from math equations.</dd>
+      </div>
+      <div>
+        <dt>What agents and Seth did</dt>
+        <dd>Claude collaborated on all seven, and one piece is Claude's self-portrait. The code arrived in one commit, so git can't show who wrote which part. Seth built nothing in this repo.</dd>
+      </div>
+      <div>
+        <dt>How it was checked</dt>
+        <dd>No tests or CI.</dd>
+      </div>
+      <div>
+        <dt>Result</dt>
+        <dd>Published and live. Gyre runs in any browser. No usage data.</dd>
+      </div>
+    </dl>
+    <p class="project-link"><a href="https://sykosyber.github.io/engines/">See Engines</a></p>
+  </article>
+</section>
+
+<section class="section wrap" id="how" aria-labelledby="how-title">
+  <h2 class="section-title" id="how-title">How I work with AI</h2>
+  <p class="statement">I don't write code by hand. AI coding agents write it, and I decide what they build, direct them, and check their work.</p>
+  <ol class="steps">
+    <li>
+      <h3>Specify</h3>
+      <p>I decide what to build and give each agent a clear task.</p>
+    </li>
+    <li>
+      <h3>Direct</h3>
+      <p>Directing AI agents is a lot like coordinating people: each one needs a clear role, a shared goal, enough context and a clean handoff. I use Claude Code, Cursor, Cline and Codex.</p>
+    </li>
+    <li>
+      <h3>Check</h3>
+      <p>I don't take an agent's word that the tests pass. A change merges only after our own automated checks run and pass.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="section wrap" id="contact" aria-labelledby="contact-title">
+  <h2 class="section-title" id="contact-title">Contact</h2>
+  <div class="email-row">
+    <a class="email" href="mailto:hello.mateorobles@gmail.com">hello.mateorobles@gmail.com</a>
+    <button class="copy" type="button" data-copy="hello.mateorobles@gmail.com" hidden>Copy address</button>
+    <span class="copy-status" role="status"></span>
+  </div>
+  <p class="location">Based in the San Francisco Bay Area.</p>
+  <div class="contact-grid">
+    <div>
+      <h3>Résumés</h3>
+      <ul>
+        <li><a href="resumes/mateo-robles-resume-support-implementation-qa.pdf">Technical support, implementation and QA <span class="meta">(PDF)</span></a></li>
+        <li><a href="resumes/mateo-robles-resume-solutions-devrel-creative.pdf">Solutions, developer relations and creative technology <span class="meta">(PDF)</span></a></li>
+        <li><a href="resumes/mateo-robles-resume-ai-automation.pdf">AI automation and operations <span class="meta">(PDF)</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Profiles</h3>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/automateon/">LinkedIn</a></li>
+        <li><a href="https://github.com/sykosyber">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer wrap">
+  <p>Site by SyberLabs.</p>
+</footer>
+
+<script>
+(() => {
+  const button = document.querySelector('[data-copy]');
+  const status = document.querySelector('.copy-status');
+  if (!button) return;
+  button.hidden = false;
+  let timer;
+  button.addEventListener('click', async () => {
+    const text = button.dataset.copy;
+    let copied = false;
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch {
+      const field = document.createElement('textarea');
+      field.value = text;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.append(field);
+      field.select();
+      try { copied = document.execCommand('copy'); } catch {}
+      field.remove();
+    }
+    button.textContent = copied ? 'Copied' : "Couldn't copy";
+    status.textContent = copied ? 'Email address copied.' : "Couldn't copy. Select the address instead.";
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      button.textContent = 'Copy address';
+      status.textContent = '';
+    }, 2400);
+  });
+})();
+</script>
+</body>
+</html>
