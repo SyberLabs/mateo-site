@@ -6,18 +6,18 @@
 <title>Mateo Robles</title>
 <meta name="description" content="Mateo Robles, Santa Clara CS 2026. Directs AI coding agents to build and test software. PorchLight placed third at a hackathon. Looking for work now.">
 <link rel="canonical" href="https://syberlabs.space/mateo-site/">
-<meta name="theme-color" content="#131d33">
+<meta name="theme-color" content="#02070a">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Mateo Robles">
 <meta property="og:description" content="Mateo Robles, Santa Clara CS 2026. Directs AI coding agents to build and test software. PorchLight placed third at a hackathon. Looking for work now.">
 <meta property="og:url" content="https://syberlabs.space/mateo-site/">
-<meta property="og:image" content="https://syberlabs.space/mateo-site/img/og.jpg">
+<meta property="og:image" content="https://syberlabs.space/mateo-site/img/og.jpg?v=20261030">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Mateo Robles">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23131d33'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23ffb547'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2302070a'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23fc734d'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -50,14 +50,19 @@
   font-display: swap;
 }
 
-/* Dusk, moonlight and one lamp. The lamp colour marks light and Mateo's own part of each project. */
+/* The SyberLabs Midnight theme (syberlabs.io, October 2026): Midnight Black, Electric Blue for links,
+   focus and structure, and Cantaloupe used a little, as the one lamp: the porch light, the availability
+   line, Mateo's own part of each project and the copy button. Contrast on Midnight: text 18.6:1,
+   haze 7.9:1, lamp 7.4:1, electric 6.3:1; Midnight on the lamp 7.4:1. */
 :root {
-  --dusk: #131d33;
-  --dusk-raised: #1b2742;
-  --rule: #2c3a5a;
-  --moon: #eef1f7;
-  --haze: #a6b1c9;
-  --lamp: #ffb547;
+  --dusk: #02070a;
+  --dusk-raised: #07121a;
+  --rule: rgba(140, 200, 235, .16);
+  --moon: #f1f6f9;
+  --haze: #93a4ae;
+  --lamp: #fc734d;
+  --electric: #0297de;
+  --electric-hi: #4cc0f5;
   --serif: "Young Serif", Georgia, "Times New Roman", serif;
   --sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --gutter: 20px;
@@ -82,12 +87,13 @@ p, ul, ol, dl, dd, figure { margin: 0; }
 a {
   color: inherit;
   text-decoration-line: underline;
-  text-decoration-color: var(--lamp);
+  text-decoration-color: var(--electric);
   text-decoration-thickness: 1px;
   text-underline-offset: .22em;
 }
-a:hover { color: var(--lamp); }
-:focus-visible { outline: 2px solid var(--lamp); outline-offset: 3px; border-radius: 2px; }
+a:hover { color: var(--electric-hi); }
+:focus-visible { outline: 2px solid var(--electric); outline-offset: 3px; border-radius: 2px; }
+::selection { background: rgba(2, 151, 222, .32); color: #fff; }
 
 .wrap {
   width: 100%;
@@ -101,10 +107,10 @@ a:hover { color: var(--lamp); }
 @property --glow { syntax: "<number>"; inherits: false; initial-value: 1; }
 body {
   background-image: radial-gradient(circle 560px at 120px 70px,
-    rgba(255, 206, 133, calc(.34 * var(--glow))),
-    rgba(255, 181, 71, calc(.13 * var(--glow))) 40%,
-    rgba(255, 181, 71, calc(.04 * var(--glow))) 70%,
-    rgba(255, 181, 71, 0) 100%);
+    rgba(253, 169, 143, calc(.30 * var(--glow))),
+    rgba(252, 115, 77, calc(.12 * var(--glow))) 40%,
+    rgba(252, 115, 77, calc(.04 * var(--glow))) 70%,
+    rgba(252, 115, 77, 0) 100%);
   background-repeat: no-repeat;
   animation: lamp-on 1.6s ease-out both;
 }
@@ -116,13 +122,13 @@ body {
   align-items: center;
   min-height: 44px;
   padding: 0 18px;
-  border: 1px solid var(--lamp);
-  border-radius: 999px;
+  border: 1px solid var(--electric);
+  border-radius: 3px;
   font-weight: 700;
   font-size: .9375rem;
   text-decoration: none;
 }
-.site-header a:hover { background: rgba(255, 181, 71, .12); color: var(--moon); }
+.site-header a:hover { background: rgba(2, 151, 222, .14); color: var(--moon); }
 
 .hero { display: grid; gap: 24px; padding-block: 4px 56px; }
 .name { font-size: clamp(4rem, 20vw, 9.5rem); line-height: .9; letter-spacing: -.015em; }
@@ -144,7 +150,7 @@ body {
   justify-items: center;
   gap: 10px;
   padding: 16px;
-  border: 1px dashed #4a5a80;
+  border: 1px dashed rgba(140, 200, 235, .28);
   border-radius: 2px;
   background: var(--dusk-raised);
   color: var(--haze);
@@ -189,7 +195,7 @@ body {
 .steps li::before {
   content: counter(step);
   grid-row: 1 / span 2;
-  color: var(--lamp);
+  color: var(--electric);
   font-family: var(--serif);
   font-size: 1.5rem;
   line-height: 1.25;
@@ -203,15 +209,16 @@ body {
   min-height: 44px;
   padding: 10px 20px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 3px;
   background: var(--lamp);
   color: var(--dusk);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .38), 0 12px 34px -14px rgba(252, 115, 77, .8);
   font: inherit;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
 }
-.copy:hover { background: #ffc875; }
+.copy:hover { background: #fd9273; }
 .copy-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .contact-grid { display: grid; gap: 36px; margin-top: 44px; }
 .contact-grid h3 { font-size: 1.5rem; margin-bottom: 10px; }
