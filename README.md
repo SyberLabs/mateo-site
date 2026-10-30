@@ -72,8 +72,10 @@ GitHub Pages, from the `main` branch root, live at https://syberlabs.space/mateo
 ## Design
 
 Light runs through Mateo's projects: PorchLight, RISE's "light and sound", Gyre's trails of
-light. So the page is a porch at dusk with one warm lamp. Dusk `#131d33`, moonlight text
-`#eef1f7`, haze `#a6b1c9`, lamp `#ffb547`. The lamp colour is used for the light itself, the
-availability line, focus rings and link underlines, and the "What I did" row of each project:
-it lights up Mateo's own part. Projects are laid out as credits: who did what, and how it was
-checked.
+light. So the page is a porch at night with one warm lamp, in the SyberLabs Midnight theme that
+syberlabs.io uses: Midnight Black `#02070a`, text `#f1f6f9`, haze `#93a4ae`, Electric Blue
+`#0297de` for link underlines, focus rings and the step numbers, and the lamp in Cantaloupe
+`#fc734d`. The lamp is used a little: for the light itself, the availability line, the copy button
+and the "What I did" row of each project, where it lights up Mateo's own part. Text on the lamp is
+Midnight (7.4:1). Projects are laid out as credits: who did what, and how it was checked.
+`img/og.jpg` is a 1200x630 render of the top of the page in the same colours.
